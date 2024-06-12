@@ -38,7 +38,7 @@ login: (req, res) => {
   });
 },
  authenticate: (req, res, next) => {
-  User.findOne({ email: req.body.email })
+  User.findOne({ email: req.body.email }) 
     .then(user  => {
       if (user) {
         user.passwordCompare(res.body.password)
